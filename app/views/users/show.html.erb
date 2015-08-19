@@ -8,6 +8,14 @@
       <dt>Username</dt>
       <dd><%= @user.username %></dd>
 
+      <dt>Favorite Dishes and Venues</dt>
+        <% @user.favorites.each do |favorites| %>
+        <dd><li class="list-group-item">
+            <%= favorites.dish.name%> (Venue: <%= favorites.venue.name %>)
+          </li>
+          </dd>
+          <% end %>
+
     </dl>
 
     <div class="btn-group btn-group-justified">
