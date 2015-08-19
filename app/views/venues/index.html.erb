@@ -19,7 +19,11 @@
       <tr>
         <td><%= venue.name %></td>
         <td><%= venue.address %></td>
-        <td><%= venue.neighborhood_id %></td>
+          <% if venue.neighborhood.present? %>
+        <td><%= venue.neighborhood.name %></td>
+        <% else %>
+        <td>No neighborhood selected</td>
+        <%end%>
         <td>
           <a href="/venues/<%= venue.id %>" class="btn btn-primary">Show</a>
           <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">Edit</a>
