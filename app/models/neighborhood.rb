@@ -4,4 +4,5 @@ class Neighborhood < ActiveRecord::Base
   validates :city, :presence => true
 
   has_many :venues
+  has_many :favorites, :through => :venues
 end

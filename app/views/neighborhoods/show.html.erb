@@ -51,8 +51,18 @@
       <button class="btn btn-success">
         Create Venue
       </button>
-
+  </form>
+  </div>
+  <dt>Favorite Dishes</dt>
+        <% @neighborhood.favorites.each do |favoritedish| %>
+        <dd><li class="list-group-item">
+            <%= favoritedish.dish.name%> at <%=favoritedish.venue.name%> by <%=favoritedish.user.username%>
+          </li>
+          </dd>
+          <% end %>
     </dl>
+
+
 
     <div class="btn-group btn-group-justified">
       <a href="/neighborhoods" class="btn btn-primary">
